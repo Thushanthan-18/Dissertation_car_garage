@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars for Sale & Rental - The Car Doctor</title>
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/sales.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <img src="../images/logo.png" alt="The Car Doctor Logo" />
+          <span>The Car Doctor</span>
+        </div>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#services">Services</a>
+          <a href="#" class="active">Sales & Rentals</a>
+          <a href="../index.html#about">About Us</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="auth-buttons">
+          <a href="../customer/login.html" class="btn btn-primary"
+            >Customer Login</a
+          >
+          <a href="../admin/login.html" class="btn btn-secondary"
+            >Admin Login</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <header class="sales-header">
+      <div class="header-content">
+        <h1>Cars for Sale & Rental</h1>
+        <p>Find your perfect vehicle from our extensive collection</p>
+        <div class="search-bar">
+          <input
+            type="text"
+            placeholder="Search by make, model, or year..."
+            class="search-input"
+          />
+          <button class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="sales-container">
+        <!-- Filter Section -->
+        <aside class="filter-panel">
+          <div class="filter-group">
+            <h3>Price Range</h3>
+            <div class="price-inputs">
+              <input type="number" placeholder="Min" min="0" />
+              <span>to</span>
+              <input type="number" placeholder="Max" min="0" />
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <h3>Vehicle Type</h3>
+            <label class="checkbox-label">
+              <input type="checkbox" /> Sedan
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" /> SUV
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" /> Hatchback
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" /> Sports Car
+            </label>
+          </div>
+
+          <div class="filter-group">
+            <h3>Make</h3>
+            <select>
+              <option value="">All Makes</option>
+              <option value="audi">Audi</option>
+              <option value="bmw">BMW</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="toyota">Toyota</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <h3>Year</h3>
+            <select>
+              <option value="">All Years</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021">2021</option>
+              <option value="2020">2020</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <h3>Fuel Type</h3>
+            <label class="checkbox-label">
+              <input type="checkbox" /> Petrol
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" /> Diesel
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" /> Electric
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" /> Hybrid
+            </label>
+          </div>
+
+          <button class="btn btn-primary apply-filters">Apply Filters</button>
+        </aside>
+
+        <!-- Cars Grid Section -->
+        <section class="cars-section">
+          <div class="cars-header">
+            <div class="results-count">Showing <span>12</span> vehicles</div>
+            <div class="sort-options">
+              <select>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="year-desc">Year: Newest First</option>
+                <option value="year-asc">Year: Oldest First</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="cars-grid">
+            <!-- Car Card -->
+            <article class="car-card">
+              <div class="car-image">
+                <img src="../images/cars/bmw-3.jpg" alt="BMW 3 Series" />
+                <span class="car-badge">Featured</span>
+              </div>
+              <div class="car-content">
+                <h3>BMW 3 Series</h3>
+                <div class="car-specs">
+                  <span><i class="fas fa-calendar"></i> 2023</span>
+                  <span><i class="fas fa-road"></i> 15,000 mi</span>
+                  <span><i class="fas fa-gas-pump"></i> Petrol</span>
+                </div>
+                <div class="car-features">
+                  <span>Automatic</span>
+                  <span>Leather</span>
+                  <span>Navigation</span>
+                </div>
+                <div class="car-price">
+                  <span class="price">£25,000</span>
+                  <button class="btn btn-primary">Inquire Now</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Add more car cards here -->
+          </div>
+
+          <div class="pagination">
+            <button class="prev-page" disabled>
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <div class="page-numbers">
+              <button class="active">1</button>
+              <button>2</button>
+              <button>3</button>
+              <span>...</span>
+              <button>10</button>
+            </div>
+            <button class="next-page">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-phone"></i> +44 20 1234 5678</p>
+          <p><i class="fas fa-envelope"></i> sales@cardoctor.com</p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> 123 Car Street, London, UK
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <a href="#">Current Offers</a>
+          <a href="#">Financing Options</a>
+          <a href="#">Book a Test Drive</a>
+          <a href="#">Car Valuation</a>
+        </div>
+        <div class="footer-section">
+          <h4>Opening Hours</h4>
+          <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+          <p>Saturday: 9:00 AM - 5:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 The Car Doctor. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../js/sales.js"></script>
+  </body>
+</html>
