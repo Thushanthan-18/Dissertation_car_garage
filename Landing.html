@@ -19,13 +19,41 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   </head>
+  <div
+    id="cookie-banner"
+    style="
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+    "
+  >
+    We use cookies to improve your experience.
+    <button
+      onclick="acceptCookies()"
+      style="
+        background: #4caf50;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        margin-left: 10px;
+        cursor: pointer;
+      "
+    >
+      Accept
+    </button>
+  </div>
+  <script src="js/main.js"></script>
+
   <body>
-    <!-- Loading Animation -->
     <div class="loading-screen">
       <div class="loader"></div>
     </div>
 
-    <!-- Navigation -->
     <nav class="main-nav">
       <div class="nav-container">
         <div class="logo">
