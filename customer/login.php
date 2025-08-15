@@ -30,7 +30,7 @@
 
         <div class="tab-content">
           <!-- Login Form -->
-          <form id="loginForm" class="auth-form active">
+          <form id="loginForm" class="auth-form active" method="POST" action="../php_file/process_login.php">
             <div class="form-group">
               <label for="loginEmail">
                 <i class="fas fa-envelope"></i>
@@ -76,7 +76,12 @@
           </form>
 
           <!-- Register Form -->
-          <form id="registerForm" class="auth-form">
+          <form
+            id="registerForm"
+            class="auth-form"
+            method="POST"
+            action="../php_file/register.php"
+          >
             <div class="form-group">
               <label for="regName">
                 <i class="fas fa-user"></i>
@@ -86,7 +91,7 @@
                 type="text"
                 class="form-control"
                 id="regName"
-                name="name"
+                name="username"
                 placeholder="Enter your full name"
                 required
               />
@@ -178,13 +183,16 @@
         </div>
 
         <div class="auth-footer">
-          <a href="../index.html">
+          <a href="../landing.html">
             <i class="fas fa-arrow-left"></i>
             Back to Website
           </a>
         </div>
       </div>
     </div>
-    <script src="js/customer.js"></script>
+    <script src="../js/customer.js"></script>
+    <script>
+      console.log('✅ Inline script loaded');
+    </script>
   </body>
 </html>

@@ -44,17 +44,17 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Settings feature coming soon!');
         });
     }
-
-    // Handle logout
+    
     const logoutBtn = document.querySelector('.logout-btn');
     if (logoutBtn) {
-        logoutBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (confirm('Are you sure you want to logout?')) {
-                window.location.href = 'login.html';
-            }
-        });
+    logoutBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (confirm('Are you sure you want to logout?')) {
+        window.location.href = '/car_garage/admin/login_a.php';
+        }
+    });
     }
+
 
     // Handle search
     const searchInput = document.querySelector('.header-search input');

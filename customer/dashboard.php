@@ -1,3 +1,29 @@
+<?php
+session_start();
+if (empty($_SESSION['user_id']) || ($_SESSION['role'] ?? '') !== 'customer') {
+  header('Location: /car_garage/customer/login.php');
+  exit;
+}
+require_once __DIR__ . '/../php_file/connect.php';
+
+// Load fresh name/email (DB is source of truth)
+$displayName  = 'Customer';
+$displayEmail = '';
+
+$stmt = $pdo->prepare("SELECT username, email FROM users WHERE user_id = ?");
+$stmt->execute([$_SESSION['user_id']]);
+$u = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($u) {
+  $displayName  = htmlspecialchars($u['username'] ?? 'Customer', ENT_QUOTES, 'UTF-8');
+  $displayEmail = htmlspecialchars($u['email'] ?? '', ENT_QUOTES, 'UTF-8');
+} else {
+  // fallback to session values
+  $displayName  = htmlspecialchars($_SESSION['username'] ?? 'Customer', ENT_QUOTES, 'UTF-8');
+  $displayEmail = htmlspecialchars($_SESSION['email'] ?? '', ENT_QUOTES, 'UTF-8');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,20 +73,20 @@
         <div class="customer-profile">
           <img src="../images/customer-avatar.jpg" alt="Customer Avatar" />
           <div class="customer-info">
-            <span class="customer-name">John Doe</span>
-            <span class="customer-email">john.doe@example.com</span>
+            <span class="customer-name"><?php echo $displayName; ?></span>
+            <span class="customer-email"><?php echo $displayEmail; ?></span>
           </div>
         </div>
-        <a href="login.html" class="logout-btn">
-          <i class="fas fa-sign-out-alt"></i>
-          Logout
-        </a>
+    <a href="/car_garage/customer/login.php" class="logout-btn">
+    <i class="fas fa-sign-out-alt"></i>
+    Logout
+    </a>
       </div>
     </nav>
 
     <main class="customer-main">
       <header class="main-header">
-        <h2>Welcome back, John!</h2>
+        <h2>Welcome back, <?php echo $displayName; ?>!</h2>
         <div class="header-actions">
           <button class="notification-btn">
             <i class="fas fa-bell"></i>
