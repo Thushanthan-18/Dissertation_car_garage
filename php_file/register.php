@@ -14,19 +14,19 @@ $confirm  = $_POST['confirmPassword'] ?? '';
 $role     = 'customer';
 
 if ($password !== $confirm) {
-    exit('❌ Passwords do not match.');
+    exit(' Passwords do not match.');
 }
 if (strlen($password) < 8) {
-    exit('❌ Password must be at least 8 characters.');
+    exit(' Password must be at least 8 characters.');
 }
 
 $hash = password_hash($password, PASSWORD_BCRYPT);
 
-// optional: enforce unique email
+
 $check = $pdo->prepare("SELECT 1 FROM users WHERE email = ?");
 $check->execute([$email]);
 if ($check->fetch()) {
-    exit('❌ Email already registered.');
+    exit(' Email already registered.');
 }
 
 try {
@@ -40,7 +40,7 @@ try {
         header("Location: /car_garage/customer/login.php?#login");
         exit;
     }
-    exit('❌ Registration failed.');
+    exit(' Registration failed.');
 } catch (PDOException $e) {
     http_response_code(500);
     exit('DB error: ' . $e->getMessage());

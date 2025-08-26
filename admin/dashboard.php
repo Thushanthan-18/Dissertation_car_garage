@@ -6,7 +6,7 @@ if (($_SESSION['role'] ?? '') !== 'admin' || empty($_SESSION['admin_id'])) {
 }
 $adminName = $_SESSION['admin_name'] ?? 'Admin';
 
-/* simple in-dashboard router */
+/* In-dashboard router */
 $page = $_GET['page'] ?? 'home';
 $routes = [
   'inventory' => '../admin_pages/inventory.php',
@@ -18,7 +18,7 @@ $routes = [
 $frameSrc = $routes[$page] ?? '';
 function active($p, $cur){ return $p===$cur ? 'active' : ''; }
 
-/* --- added: data for KPIs / chart / recent --- */
+/* --- data for KPIs / chart / recent --- */
 require_once __DIR__ . '/../php_file/connect.php';
 try {
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -64,7 +64,7 @@ try {
     $counts[] = $map[$d] ?? 0;
   }
 } catch (Throwable $e) {
-  // fail quietly on the home widgets if DB not reachable
+  
   $totalCustomers=$totalBookings=$totalServices=$pendingBookings=$todayBookings=0;
   $revenue=0.0; $recent=[]; $labels=[]; $counts=[];
 }
@@ -78,7 +78,7 @@ try {
   <link rel="stylesheet" href="../css/admin.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <style>
-    /* minimal styles to keep iframe inside the main area */
+    
     .admin-main { position: relative; }
     .tab-frame {
       width: 100%; height: calc(100vh - 120px);
@@ -203,7 +203,7 @@ try {
       </script>
 
     <?php elseif ($frameSrc): ?>
-      <!-- load the chosen section inside the dashboard -->
+    
       <iframe class="tab-frame" src="<?php echo htmlspecialchars($frameSrc); ?>" title="Admin Section"></iframe>
     <?php else: ?>
       <div class="welcome-card"><p>Page not found.</p></div>

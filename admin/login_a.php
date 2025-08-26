@@ -16,7 +16,7 @@
         <p>Enter your credentials to access the admin dashboard</p>
       </div>
 
-      <!-- Post to the UNIFIED login handler -->
+      
       <form class="auth-form" method="POST" action="/car_garage/php_file/admin_login.php">
         <div class="form-group">
           <label for="email"><i class="fas fa-envelope"></i> Admin Email</label>

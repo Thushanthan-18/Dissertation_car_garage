@@ -1,4 +1,4 @@
-/* ===== Service Pages — polished shared CSS ===== */
+/* ===== Service Pages —  shared CSS ===== */
 
 /* Tokens */
 :root{
@@ -104,7 +104,7 @@ body{background:var(--bg);color:var(--ink)}
   border-radius:12px;margin:-6px 0 12px;color:#334155;line-height:1.55
 }
 
-/* Buttons (use your base .btn; refine here) */
+/* Buttons ) */
 .btn{display:inline-block;padding:10px 12px;border-radius:10px;text-decoration:none}
 .btn.alt{background:#334155;color:#fff;border:0}
 .btn.primary{background:var(--brand);color:#fff;border:0}

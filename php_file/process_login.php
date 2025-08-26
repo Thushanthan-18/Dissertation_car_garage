@@ -37,7 +37,7 @@ if (!password_verify($password, $user['password_hash'])) {
 // good login → set session
 session_regenerate_id(true);
 $_SESSION['user_id']  = (int)$user['user_id'];
-$_SESSION['role']     = 'customer';               // enforce role
+$_SESSION['role']     = 'customer';               
 $_SESSION['username'] = $user['username'] ?? '';
 $_SESSION['email']    = $user['email'] ?? '';
 

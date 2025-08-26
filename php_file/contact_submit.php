@@ -31,6 +31,6 @@ try {
   echo json_encode(array('ok' => $ok, 'msg' => 'Thanks, your message has been sent'));
 } catch (Exception $e) {
   http_response_code(500);
-  // TEMP: show exact DB error so we can fix it
+  
   echo 'Save failed: ' . $e->getMessage();
 }

@@ -1,6 +1,6 @@
 // Wait for the page to load
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const regPasswordInput = document.getElementById('regPassword');
     const regConfirmPasswordInput = document.getElementById('regConfirmPassword');
 
-    // Update login button text based on auth state
+
     function updateAuthButton() {
         const loginBtn = document.getElementById('loginBtn');
         if (currentUser) {

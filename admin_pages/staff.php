@@ -10,7 +10,7 @@ $csrf = $_SESSION['csrf'];
 
 $msg = null; $err = null;
 
-/* Handle POST: add / delete */
+/* Handle POST:  */
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (!hash_equals($_SESSION['csrf'] ?? '', $_POST['csrf'] ?? '')) {
     $err = "Invalid session token.";
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $pass     = $_POST['password'] ?? '';
       $staffIdInput = trim($_POST['staff_id'] ?? '');
 
-      // minimal validation
+      
       if ($username === '' || $email === '' || $role === '' || $pass === '') {
         $err = "All fields marked * are required.";
       } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       } elseif (strlen($pass) < 8) {
         $err = "Password must be at least 8 characters.";
       } else {
-        // unique email?
+        
         $chk = $pdo->prepare("SELECT 1 FROM admin_users WHERE email = :e LIMIT 1");
         $chk->execute([':e'=>$email]);
         if ($chk->fetch()) {
@@ -42,11 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           if ($staffIdInput !== '') {
             $staffId = $staffIdInput;
           } else {
-            // If staff_id is INT
+
             $staffId = (int)$pdo->query("SELECT COALESCE(MAX(staff_id),0)+1 FROM admin_users")->fetchColumn();
-            // If staff_id is VARCHAR and you want STF codes, swap with:
-            // $n = (int)$pdo->query("SELECT COALESCE(MAX(CAST(staff_id AS UNSIGNED)),0)+1 FROM admin_users")->fetchColumn();
-            // $staffId = 'STF'.str_pad((string)$n, 4, '0', STR_PAD_LEFT);
+
           }
 
           $hash = password_hash($pass, PASSWORD_BCRYPT);
@@ -205,7 +203,7 @@ function e($s){ return htmlspecialchars((string)$s, ENT_QUOTES, 'UTF-8'); }
       <p class="muted">Tip: you can’t remove your own account.</p>
     </div>
 
-    <!-- Right: add staff -->
+    <!-- add staff -->
     <div class="sidecard">
       <h3><i class="fas fa-user-plus"></i> Add New Staff</h3>
       <form method="post" autocomplete="off" class="form-grid">

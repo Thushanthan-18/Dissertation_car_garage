@@ -192,7 +192,7 @@
     </div>
     <script src="../js/customer.js"></script>
     <script>
-      console.log('✅ Inline script loaded');
+      console.log(' Inline script loaded');
     </script>
   </body>
 </html>

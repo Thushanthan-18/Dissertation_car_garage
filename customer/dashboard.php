@@ -217,7 +217,7 @@ $page = $_GET['page'] ?? 'home';
         </div>
       </header>
 
-      <!-- Two quick actions -->
+      <!-- Two actions -->
       <div class="qa-grid">
         <a href="dashboard.php?page=book" class="qa-card"><i class="fas fa-calendar-plus"></i><div>Book Service</div></a>
         <a href="dashboard.php?page=vehicles" class="qa-card"><i class="fas fa-car-side"></i><div>Add Vehicle</div></a>

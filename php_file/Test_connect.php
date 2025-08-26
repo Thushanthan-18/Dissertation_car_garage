@@ -1,4 +1,4 @@
 <?php
 require_once 'connect.php';
-echo "✅ Connected to MySQL.";
+echo " Connected to MySQL.";
 ?>

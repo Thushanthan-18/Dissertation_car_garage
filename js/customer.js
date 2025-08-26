@@ -4,14 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
   
     tabButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
-        // Remove active class from all buttons
         tabButtons.forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
   
-        // Get tab target
         const target = btn.getAttribute("data-tab");
   
-        // Toggle forms
         forms.forEach((form) => {
           if (form.id === target + "Form") {
             form.classList.add("active");
@@ -38,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Handle social login buttons
+    // social login buttons
     const socialBtns = document.querySelectorAll('.social-btn');
     if (socialBtns.length > 0) {
         socialBtns.forEach(btn => {
@@ -48,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Handle notifications
+    //  notifications
     const notificationBtn = document.querySelector('.notification-btn');
     if (notificationBtn) {
         notificationBtn.addEventListener('click', function() {
@@ -56,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Handle booking actions
+    //  booking actions
     const rescheduleButtons = document.querySelectorAll('.reschedule-btn');
     const cancelButtons = document.querySelectorAll('.cancel-btn');
 
@@ -75,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Handle quick action buttons
+    //  quick action buttons
     const actionCards = document.querySelectorAll('.action-card');
     actionCards.forEach(card => {
         card.addEventListener('click', function(e) {
