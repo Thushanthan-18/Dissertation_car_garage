@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Car Doctor - Professional car servicing, MOT testing, repairs, and diagnostics in London"
+    />
+    <title>The Car Doctor - Professional Car Services</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+
+    <style>
+      /* Bottom Sales & Rentals Promo */
+      .sr-promo { background:#0f172a; color:#fff; padding:36px 0; }
+      .sr-wrap { max-width:1100px; margin:0 auto; padding:0 16px;
+                 display:grid; gap:20px; grid-template-columns:1.2fr .8fr; align-items:center; }
+      .sr-text h2 { margin:0 0 8px; font-size:28px; }
+      .sr-text p { margin:0 0 16px; color:#cbd5e1; }
+      .sr-image img { width:100%; height:220px; object-fit:cover; border-radius:12px;
+                      box-shadow:0 8px 18px rgba(0,0,0,.25); }
+      @media (max-width:900px){ .sr-wrap{ grid-template-columns:1fr } .sr-image img{ height:200px } }
+      /* Map container */
+      .contact-map { width:100%; height:300px; border-radius:12px; overflow:hidden; }
+    </style>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  </head>
+  <body>
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" style="position: fixed;bottom: 0;width: 100%;background: #333;color: white;text-align: center;padding: 10px;font-size: 14px;">
+      We use cookies to improve your experience.
+      <button onclick="acceptCookies()" style="background: #4caf50;color: white;border: none;padding: 5px 10px;margin-left: 10px;cursor: pointer;">
+        Accept
+      </button>
+    </div>
+
+    <div class="loading-screen"><div class="loader"></div></div>
+
+    <!-- Navbar -->
+    <nav class="main-nav">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="Logo 2.jpg" alt="The Car Doctor Logo" />
+          <span>The Car Doctor</span>
+        </div>
+        <div class="nav-links">
+          <a href="#home" class="active">Home</a>
+          <a href="#services">Services</a>
+          <a href="sales-rentals/index.html">Sales & Rentals</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="auth-buttons">
+          <a href="customer/login.php" class="btn btn-primary">Customer Login</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero -->
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1>Welcome to The Car Doctor</h1>
+          <p>Professional Car Care Services You Can Trust</p>
+          <div class="hero-buttons">
+            <a href="#services" class="btn btn-primary">Our Services</a>
+            <a href="#contact" class="btn btn-outline">Contact Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="services">
+        <div class="container">
+          <h2 class="section-title">Our Services</h2>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon"><i class="fas fa-car"></i></div>
+              <h3>Car Servicing</h3>
+              <p>Comprehensive car servicing to keep your vehicle in top condition.</p>
+              <a href="services/car-servicing.html" class="btn btn-text">Learn More</a>
+            </div>
+            <div class="service-card">
+              <div class="service-icon"><i class="fas fa-clipboard-check"></i></div>
+              <h3>MOT Testing</h3>
+              <p>Official MOT testing station with expert technicians.</p>
+              <a href="services/mot-testing.html" class="btn btn-text">Learn More</a>
+            </div>
+            <div class="service-card">
+              <div class="service-icon"><i class="fas fa-wrench"></i></div>
+              <h3>Repairs</h3>
+              <p>Professional repair services for all makes and models.</p>
+              <a href="services/repairs.html" class="btn btn-text">Learn More</a>
+            </div>
+            <div class="service-card">
+              <div class="service-icon"><i class="fas fa-laptop"></i></div>
+              <h3>Diagnostics</h3>
+              <p>Advanced diagnostic testing to identify any issues.</p>
+              <a href="services/diagnostics.html" class="btn btn-text">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="about">
+        <div class="container">
+          <div class="about-content">
+            <div class="about-text">
+              <h2 class="section-title">About Us</h2>
+              <p>
+                With over 20 years of experience, The Car Doctor has been the trusted choice for car care in London.
+                Our team of certified mechanics combines expertise with cutting-edge technology to deliver exceptional service.
+              </p>
+              <ul class="about-features">
+                <li><i class="fas fa-check"></i> Certified Mechanics</li>
+                <li><i class="fas fa-check"></i> Latest Technology</li>
+                <li><i class="fas fa-check"></i> Competitive Pricing</li>
+                <li><i class="fas fa-check"></i> Customer Satisfaction</li>
+              </ul>
+            </div>
+            <div class="about-image">
+              <img src="images/about-img.jpg" alt="Our Professional Garage" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 class="section-title">Contact Us</h2>
+          <div class="contact-grid">
+            <div class="contact-form">
+              <h3>Send us a Message</h3>
+              <form id="contactForm" method="POST" action="/car_garage/php_file/contact_submit.php">
+                <input type="hidden" id="csrfField" name="csrf">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required />
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </form>
+              <div id="contactFeedback" style="display:none" class="alert"></div>
+            </div>
+            <div class="contact-info">
+              <h3>Find Us</h3>
+              <div class="info-grid">
+                <div class="info-item"><i class="fas fa-map-marker-alt"></i><p>123 Car Street<br />London, UK</p></div>
+                <div class="info-item"><i class="fas fa-phone"></i><p>+44 20 1234 5678</p></div>
+                <div class="info-item"><i class="fas fa-envelope"></i><p>info@cardoctor.com</p></div>
+                <div class="info-item"><i class="fas fa-clock"></i><p>Mon-Fri: 8:00 - 18:00<br />Sat: 9:00 - 17:00</p></div>
+              </div>
+              <div id="map" class="contact-map"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Sales & Rentals Promo (single-car teaser) -->
+      <section class="sr-promo">
+        <div class="sr-wrap">
+          <div class="sr-text">
+            <h2>Looking for your next car?</h2>
+            <p>Browse our curated cars for sale and flexible rentals. See availability and pricing on the Sales & Rentals page.</p>
+            <a class="btn btn-primary" href="sales-rentals/index.html">View Sales & Rentals</a>
+            <p style="margin-top:10px; font-size:14px; color:#94a3b8;">
+              Prefer to talk? Call us on <strong>+44 20 1234 5678</strong>.
+            </p>
+          </div>
+          <div class="sr-image">
+            <img src="images/cars/bmw-3-series.jpg" alt="Featured Car">
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p><i class="fas fa-phone"></i> +44 20 1234 5678</p>
+          <p><i class="fas fa-envelope"></i> info@cardoctor.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> 123 Car Street, London, UK</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <a href="#services">Our Services</a>
+          <a href="sales-rentals/index.html">Sales & Rentals</a>
+          <a href="#about">About Us</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-section">
+          <h4>Opening Hours</h4>
+          <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+          <p>Saturday: 9:00 AM - 5:00 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 The Car Doctor. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
+      // Cookie banner simple handler
+      function acceptCookies(){
+        const b=document.getElementById('cookie-banner');
+        if(b) b.style.display='none';
+        document.cookie = "cookie_consent=1; path=/; max-age=" + (60*60*24*365);
+      }
+
+      // Load CSRF token for the contact form
+      (async function () {
+        const csrfField = document.getElementById('csrfField');
+        try {
+          const r = await fetch('/car_garage/php_file/csrf.php', { credentials: 'include' });
+          const j = await r.json();
+          if (csrfField) csrfField.value = j.csrf || '';
+        } catch {}
+      })();
+
+      // Init Leaflet map
+      document.addEventListener('DOMContentLoaded', function(){
+        var map = L.map('map').setView([51.509865, -0.118092], 12);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+        L.marker([51.509865, -0.118092]).addTo(map)
+          .bindPopup('The Car Doctor<br>123 Car Street, London')
+          .openPopup();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+/* ===== Service Pages — polished shared CSS ===== */
+
+/* Tokens */
+:root{
+  --bg:#f6f7fb;
+  --ink:#111827;
+  --muted:#6b7280;
+  --brand:#2563eb;
+  --dark:#0f172a;
+  --dark-2:#0b1227;
+  --card:#ffffff;
+  --border:#e5e7eb;
+  --soft:#f3f4f6;
+  --shadow:0 10px 24px rgba(0,0,0,.08);
+  --radius:14px;
+  --radius-sm:10px;
+  --maxw:1100px;
+}
+
+/* Page base */
+body{background:var(--bg);color:var(--ink)}
+.sv-wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+.section{padding:28px 0}
+.divider{height:1px;background:var(--border);margin:22px 0}
+
+/* Hero */
+.sv-hero{
+  background:var(--dark);
+  color:#fff;
+  padding:44px 0 28px;
+  border-bottom:1px solid var(--dark-2);
+}
+.sv-hero h1{margin:6px 0 10px;font-size:32px;line-height:1.2;font-weight:800}
+.sv-hero p{margin:0;color:#cbd5e1;font-size:15px}
+
+/* Breadcrumbs */
+.breadcrumbs{font-size:14px;margin-bottom:12px;opacity:.95}
+.breadcrumbs a{color:#cbd5e1;text-decoration:none}
+.breadcrumbs a:hover{text-decoration:underline}
+
+/* Badge */
+.badge{
+  display:inline-block;margin-left:8px;padding:6px 10px;font-size:12px;
+  border-radius:999px;background:#334155;border:1px solid #475569;color:#e5e7eb
+}
+
+/* KPI row */
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0 0}
+.kpi{
+  background:var(--dark-2);
+  border:1px solid #1f2a44;
+  padding:14px;border-radius:var(--radius-sm);text-align:center;color:#e5e7eb
+}
+.kpi div{opacity:.95;margin-bottom:6px}
+.kpi strong{font-size:18px}
+@media (max-width:780px){.kpis{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.kpis{grid-template-columns:1fr}}
+
+/* Main grid */
+.sv-grid{
+  display:grid;grid-template-columns:1.6fr .95fr;gap:24px;margin:26px 0
+}
+@media (max-width:1000px){.sv-grid{grid-template-columns:1fr}}
+
+/* Card */
+.card{
+  background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:20px
+}
+.card h3{margin:0 0 12px;font-size:20px}
+.card p{color:var(--muted)}
+.card .sub{color:var(--muted);font-size:14px}
+
+/* Lists */
+.list{margin:0;padding-left:18px}
+.list li{margin:6px 0}
+
+/* Media in content */
+.sv-wrap img,.card img{
+  max-width:100%;height:auto;border-radius:12px;display:block;margin:12px auto
+}
+
+/* Pricing table */
+.price-table{
+  width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;
+  overflow:hidden;border:1px solid var(--border)
+}
+.price-table thead th{
+  background:var(--soft);text-align:left;padding:12px;font-weight:700
+}
+.price-table td{
+  padding:12px;border-top:1px solid var(--border)
+}
+
+/* FAQ */
+.faq .q{
+  cursor:pointer;padding:12px;border:1px solid var(--border);
+  border-radius:12px;margin:12px 0;background:#fafafa;
+  transition:background .2s,border-color .2s
+}
+.faq .q:hover{background:#eef2f7;border-color:#d9dee6}
+.faq .a{
+  display:none;padding:12px 14px;background:#f8fafc;border:1px solid #eef;
+  border-radius:12px;margin:-6px 0 12px;color:#334155;line-height:1.55
+}
+
+/* Buttons (use your base .btn; refine here) */
+.btn{display:inline-block;padding:10px 12px;border-radius:10px;text-decoration:none}
+.btn.alt{background:#334155;color:#fff;border:0}
+.btn.primary{background:var(--brand);color:#fff;border:0}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+/* Utilities */
+.mt-8{margin-top:8px}.mt-12{margin-top:12px}.mt-16{margin-top:16px}.mt-20{margin-top:20px}
+.center{text-align:center}.muted{color:var(--muted)}

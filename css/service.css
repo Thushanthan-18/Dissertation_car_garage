@@ -1,0 +1,163 @@
+/* ===== Services Pages Shared Styles ===== */
+
+/* General layout */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafb;
+  margin: 0;
+  color: #111827;
+  line-height: 1.6;
+}
+
+a {
+  color: #4f46e5;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.sv-hero {
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+.sv-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+}
+.sv-hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+.badge {
+  background: #fff;
+  color: #4f46e5;
+  font-size: 0.85rem;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  margin-left: 6px;
+}
+
+/* Wrapper */
+.sv-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Grid Layout */
+.sv-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-top: 30px;
+}
+@media (max-width: 900px) {
+  .sv-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  padding: 20px;
+}
+.card h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+/* KPI Stats */
+.kpis {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.kpi {
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 12px 20px;
+  text-align: center;
+}
+.kpi strong {
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 4px;
+}
+
+/* Lists */
+.list {
+  padding-left: 18px;
+}
+.list li {
+  margin-bottom: 6px;
+}
+
+/* Price Table */
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.price-table th,
+.price-table td {
+  border-bottom: 1px solid #e5e7eb;
+  padding: 10px;
+  text-align: left;
+}
+.price-table th {
+  background: #f3f4f6;
+}
+
+/* FAQ */
+.faq .q {
+  cursor: pointer;
+  margin: 10px 0;
+}
+.faq .a {
+  display: none;
+  margin-left: 10px;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: #4f46e5;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+.btn:hover {
+  background: #4338ca;
+}
+.btn.alt {
+  background: #e5e7eb;
+  color: #111827;
+}
+.btn.alt:hover {
+  background: #d1d5db;
+}
+
+/* Breadcrumbs */
+.breadcrumbs {
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  color: #dbeafe;
+}
+.breadcrumbs a {
+  color: #fff;
+}

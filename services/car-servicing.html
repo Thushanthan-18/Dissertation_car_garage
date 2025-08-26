@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Car Servicing - The Car Doctor</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../images/favicon.ico">
+
+  <!-- Shared Styles -->
+  <link rel="stylesheet" href="../css/styles.css?v=3">
+  <link rel="stylesheet" href="../css/service.css?v=3">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar (match landing) -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="../Logo 2.jpg" alt="The Car Doctor Logo" />
+        <span>The Car Doctor</span>
+      </div>
+      <div class="nav-links">
+        <a href="../landing.html">Home</a>
+        <a href="../landing.html#services" class="active">Services</a>
+        <a href="../sales-rentals/index.html">Sales & Rentals</a>
+        <a href="../landing.html#about">About Us</a>
+        <a href="../landing.html#contact">Contact</a>
+      </div>
+      <div class="auth-buttons">
+        <a href="../customer/login.php" class="btn btn-primary">Customer Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="sv-hero">
+    <div class="sv-wrap">
+      <nav class="breadcrumbs">
+        <a href="../landing.html">Home</a> / <a href="../landing.html#services">Services</a> / Car Servicing
+      </nav>
+      <h1>Car Servicing <span class="badge">Maintenance</span></h1>
+      <p>Keep your vehicle safe, efficient, and warranty-compliant.</p>
+      <div class="kpis">
+        <div class="kpi"><div><i class="fas fa-clock"></i> Typical time</div><strong>1.5–3 hrs</strong></div>
+        <div class="kpi"><div><i class="fas fa-pound-sign"></i> From</div><strong>£89</strong></div>
+        <div class="kpi"><div><i class="fas fa-star"></i> Rating</div><strong>4.8/5</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body -->
+  <section>
+    <div class="sv-wrap sv-grid">
+      <div class="card">
+        <h3>What’s included</h3>
+        <ul class="list">
+          <li>Oil and filter change</li>
+          <li>Brake, tyre, and fluid checks</li>
+          <li>Battery and charging test</li>
+          <li>Lights, wipers, and safety inspection</li>
+          <li>OBD diagnostics scan</li>
+          <li>Service reset and report</li>
+        </ul>
+
+        <h3 style="margin-top:16px">How it works</h3>
+        <ol class="list">
+          <li>Book a slot online or by phone.</li>
+          <li>Drop off your car or wait in lounge.</li>
+          <li>We service and quality-check.</li>
+          <li>Collect with a service report.</li>
+        </ol>
+
+        <h3 style="margin-top:16px">FAQs</h3>
+        <div class="faq">
+          <div class="q"><strong>How often should I service?</strong></div>
+          <div class="a">Typically every 12 months or 10–12k miles, whichever comes first.</div>
+
+          <div class="q"><strong>Will you stamp my service book?</strong></div>
+          <div class="a">Yes. We also provide a digital record.</div>
+        </div>
+      </div>
+
+      <aside class="card">
+<h3>Pricing</h3>
+<div class="pricing-note">
+  <p>Service costs vary depending on the make, model, and condition of your car.</p>
+  <ul class="list">
+    <li>Interim service — price on request</li>
+    <li>Full service — price on request</li>
+    <li>Major service — price on request</li>
+  </ul>
+  <p style="margin-top:10px;color:#64748b;font-size:14px">
+    For an exact quote, please <a href="../index.html#contact">contact us</a> or call <strong>+44 20 1234 5678</strong>.
+  </p>
+</div>
+  </section>
+
+  <!-- Back link -->
+  <section>
+    <div class="sv-wrap" style="text-align:center;margin:18px 0 26px">
+      <a class="btn alt" href="../landing.html#services"><i class="fas fa-arrow-left"></i> Back to all services</a>
+    </div>
+  </section>
+
+  <!-- Footer (match landing) -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-phone"></i> +44 20 1234 5678</p>
+        <p><i class="fas fa-envelope"></i> info@cardoctor.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Car Street, London, UK</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="../landing.html#services">Our Services</a>
+        <a href="../sales-rentals/index.html">Sales & Rentals</a>
+        <a href="../landing.html#about">About Us</a>
+        <a href="../landing.html#contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h4>Opening Hours</h4>
+        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+        <p>Saturday: 9:00 AM - 5:00 PM</p>
+        <p>Sunday: Closed</p>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 The Car Doctor. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('click',e=>{
+    const q=e.target.closest('.faq .q'); if(!q) return;
+    const a=q.nextElementSibling; if(!a) return;
+    a.style.display = a.style.display==='block' ? 'none' : 'block';
+  });
+  </script>
+</body>
+</html>

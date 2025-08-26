@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cars for Sale & Rental - The Car Doctor</title>
+
+  <!-- Site styles (same as landing) -->
+  <link rel="stylesheet" href="/car_garage/css/styles.css?v=1" />
+  <link rel="icon" type="image/x-icon" href="/car_garage/images/favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+  <!-- Page-specific polish -->
+  <style>
+    .sales-header{background:#0f172a;color:#fff;padding:48px 16px}
+    .sales-header .header-content{max-width:1100px;margin:0 auto;text-align:center}
+    .sales-header h1{margin:0 0 8px}
+    .sales-header p{margin:0;opacity:.9}
+
+    .inventory{padding:32px 0;background:#fafafa}
+    .inventory .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .section-title{margin:8px 0 16px}
+
+    .inventory-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:20px}
+    .car-card{background:#fff;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08);text-align:center;padding:15px;transition:transform .2s,box-shadow .2s}
+    .car-card:hover{transform:translateY(-6px);box-shadow:0 8px 18px rgba(0,0,0,.15)}
+    .car-card img{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px}
+    .car-card h3{margin:8px 0;font-size:18px}
+    .badge{display:inline-block;padding:6px 12px;border-radius:20px;font-size:14px;font-weight:600;margin-top:8px}
+    .badge.sale{background:#e6f4ea;color:#15803d;border:1px solid #bbf7d0}
+    .badge.rent{background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe}
+    .actions{display:flex;gap:8px;justify-content:center;margin-top:12px}
+    .btn{display:inline-block;padding:10px 12px;background:#111;color:#fff;border-radius:8px;text-decoration:none}
+    .btn.light{background:#4b5563}
+  </style>
+</head>
+<body>
+
+  <!-- Top nav (same structure as landing) -->
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="/car_garage/Logo 2.jpg" alt="The Car Doctor Logo" />
+        <span>The Car Doctor</span>
+      </div>
+      <div class="nav-links">
+        <a href="/car_garage/landing.html">Home</a>
+        <a href="/car_garage/landing.html#services">Services</a>
+        <a href="#" class="active">Sales & Rentals</a>
+        <a href="/car_garage/landing.html#about">About Us</a>
+        <a href="/car_garage/landing.html#contact">Contact</a>
+      </div>
+      <div class="auth-buttons">
+        <a href="/car_garage/customer/login.php" class="btn btn-primary">Customer Login</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="sales-header">
+    <div class="header-content">
+      <h1>Cars for Sale & Rental</h1>
+      <p>Find your perfect vehicle from our curated selection</p>
+    </div>
+  </header>
+
+  <!-- Sales & Rentals -->
+  <section id="inventory" class="inventory">
+    <div class="container">
+      <h2 class="section-title">Sales & Rentals</h2>
+
+      <p style="text-align:center;margin-bottom:20px;color:#555;font-size:14px;">
+        To purchase or rent a car, please call us directly at <strong>+44 20 1234 5678</strong>.
+      </p>
+
+      <div class="inventory-grid">
+        <!-- For Sale -->
+        <article class="car-card for-sale">
+          <img src="/car_garage/images/cars/bmw-3-series.jpg" alt="BMW 3 Series">
+          <h3>BMW 3 Series</h3>
+          <span class="badge sale">For Sale - £18,500</span>
+          <div class="actions">
+            <a class="btn" href="/car_garage/customer/login.php?next=/car_garage/customer/dashboard.php?page=book">Book Viewing</a>
+            <a class="btn light" href="#">Enquire</a>
+          </div>
+        </article>
+
+        <article class="car-card for-sale">
+          <img src="/car_garage/images/cars/audi-a3.jpg" alt="Audi A3">
+          <h3>Audi A3</h3>
+          <span class="badge sale">For Sale - £15,000</span>
+          <div class="actions">
+            <a class="btn" href="/car_garage/customer/login.php?next=/car_garage/customer/dashboard.php?page=book">Book Viewing</a>
+            <a class="btn light" href="#">Enquire</a>
+          </div>
+        </article>
+
+        <article class="car-card for-sale">
+          <img src="/car_garage/images/cars/ford-focus.jpg" alt="Ford Focus">
+          <h3>Ford Focus</h3>
+          <span class="badge sale">For Sale - £12,750</span>
+          <div class="actions">
+            <a class="btn" href="/car_garage/customer/login.php?next=/car_garage/customer/dashboard.php?page=book">Book Viewing</a>
+            <a class="btn light" href="#">Enquire</a>
+          </div>
+        </article>
+
+        <!-- Rentals -->
+        <article class="car-card for-rent">
+          <img src="/car_garage/images/cars/vw-golf.jpg" alt="VW Golf">
+          <h3>VW Golf</h3>
+          <span class="badge rent">Rental - £40/day</span>
+          <div class="actions">
+            <a class="btn" href="/car_garage/customer/login.php?next=/car_garage/customer/dashboard.php?page=book">Book Rental</a>
+            <a class="btn light" href="#">Details</a>
+          </div>
+        </article>
+
+        <article class="car-card for-rent">
+          <img src="/car_garage/images/cars/toyota-yaris.jpg" alt="Toyota Yaris">
+          <h3>Toyota Yaris</h3>
+          <span class="badge rent">Rental - £35/day</span>
+          <div class="actions">
+            <a class="btn" href="/car_garage/customer/login.php?next=/car_garage/customer/dashboard.php?page=book">Book Rental</a>
+            <a class="btn light" href="#">Details</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-phone"></i> +44 20 1234 5678</p>
+        <p><i class="fas fa-envelope"></i> sales@cardoctor.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Car Street, London, UK</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="/car_garage/landing.html">Home</a>
+        <a href="/car_garage/landing.html#services">Services</a>
+        <a href="#">Sales & Rentals</a>
+        <a href="/car_garage/landing.html#contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h4>Opening Hours</h4>
+        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+        <p>Saturday: 9:00 AM - 5:00 PM</p>
+        <p>Sunday: Closed</p>
+      </div>
+      <div class="footer-section">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 The Car Doctor. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
